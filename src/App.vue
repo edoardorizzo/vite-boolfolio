@@ -1,6 +1,20 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue';
 import axios from 'axios';
+
+methods: {
+  fetchProjects(); {
+    axios.get('http://localhost:8889/api/projects')
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+}
+
+
 </script>
 
 <template>
